@@ -1,5 +1,5 @@
 import Blogs from "./blogs";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export interface blog {
@@ -17,15 +17,24 @@ function Home(): JSX.Element {
         { title: 'More thing', body: 'Yes this is just more thing', author: 'Who say You', id: 3 }
     ])
 
+    const [name, setName] = useState('Hassan')
+
     const handleDelete = (id: number) => {
         const newBlog = blogs.filter(blog => blog.id !== id);
 
         setBlogs(newBlog)
     }
 
+    useEffect(() => {
+        console.log('blogs')
+        console.log(name)
+    }, [name])
+
     return (
         <main>
             <Blogs blog={blogs} handleDelete={handleDelete} />
+            <button onClick={()  => setName('Baba')}>Change Name</button>
+            <p>{name}</p>
         </main>
     )
 }

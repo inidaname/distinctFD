@@ -3,7 +3,6 @@ import {blog} from './home';
 function Blogs ({blog, handleDelete}: {blog: blog[], handleDelete: Function}): JSX.Element {
 
     const blogs: blog[] = blog
-    console.log(blog)
 
     return(
         <div>
