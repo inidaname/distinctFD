@@ -1,0 +1,22 @@
+{
+    "blogs": [
+        { 
+            "title": "Something", 
+            "body": "Yes this is something", 
+            "author": "You Know Who",
+            "id": 1 
+        },
+        { 
+            "title": "Another thing", 
+            "body": "Yes this is another thing", 
+            "author": "You Say Who",
+            "id": 2 
+        },
+        { 
+            "title": "More thing", 
+            "body": "Yes this is just more thing", 
+            "author": "Who say You",
+            "id": 3
+        }
+    ]
+}
