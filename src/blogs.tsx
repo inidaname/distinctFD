@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import {blog} from './home';
 
-function Blogs ({blog, handleDelete}: {blog: blog[], handleDelete: Function}): JSX.Element {
+function Blogs ({blog}: {blog: blog[]}): JSX.Element {
 
     const blogs: blog[] = blog
 
@@ -8,9 +9,10 @@ function Blogs ({blog, handleDelete}: {blog: blog[], handleDelete: Function}): J
         <div>
             {blogs.map((blog) => (
                 <div key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>by {blog.author}</p>
-                    <button onClick={() => handleDelete(blog.id)}>Delete</button>
+                    <Link to={`/blogs/${blog.id}`}>
+                        <h2>{blog.title}</h2>
+                        <p>by {blog.author}</p>
+                    </Link>
                 </div>
             ))}
         </div>

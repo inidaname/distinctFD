@@ -12,16 +12,12 @@ export interface blog {
 
 function Home(): JSX.Element {
     const {isPending, error, blogs} = useFetch('http://localhost:3400/blogs')
-    const handleDelete = (id: number) => {
-
-    }
-
 
     return (
         <main>
             {isPending && <div>Loading...</div>}
             {error && <div>{error}</div>}
-            {blogs && <Blogs blog={blogs} handleDelete={handleDelete} />}
+            {blogs && <Blogs blog={blogs} />}
         </main>
     )
 }
