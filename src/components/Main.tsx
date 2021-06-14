@@ -5,16 +5,14 @@ import NotFound from "../module/NotFound";
 
 function Main(): JSX.Element {
   return (
-    <main>
-      <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route path="*">
-          <NotFound></NotFound>
-        </Route>
-      </Switch>
-    </main>
+    <Switch>
+      <Route exact path="/">
+        <Home></Home>
+      </Route>
+      <Route path="*">
+        <NotFound></NotFound>
+      </Route>
+    </Switch>
   );
 }
 
