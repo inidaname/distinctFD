@@ -1,12 +1,13 @@
+import Nav from './header/Nav';
 import Top from './header/Top';
 
 function Header(): JSX.Element {
   return (
-    <header className="w-full h-56 flex flex-col justify-start items-start">
+    <header className="w-full h-60 flex flex-col justify-start items-start">
       <Top></Top>
       {/* ads section */}
       {/* TODO: use ads as both horizontal and vertical display */}
-      <section className="w-5/6 mx-auto h-28 mt-10 flex flex-row justify-between items-center">
+      <section className=" h-60 border-black border w-5/6 mx-auto flex flex-row justify-between items-center">
         {/* Logo section */}
         <div className="w-1/5 ml-7 border border-black">
           <h1 className="hidden">Distinct News</h1>
@@ -18,6 +19,9 @@ function Header(): JSX.Element {
 
         </div>
       </section>
+
+      {/* Navigation */}
+      <Nav></Nav>
     </header>
   );
 }
