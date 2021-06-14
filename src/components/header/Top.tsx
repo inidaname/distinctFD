@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Top(): JSX.Element {
   return (
-  <div className="w-full h-12 shadow mb-10">
+  <div className="w-full h-12 shadow mb-5">
     <div className="w-5/6 mx-auto h-12 flex flex-row justify-start items-center text-sm">
       {/* Weather and date here */}
       <div className="flex flex-row justify-around items-center w-1/3">
