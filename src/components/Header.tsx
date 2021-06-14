@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header(): JSX.Element {
   return (
-    <header className="w-full h-56 border-b-2 flex flex-col justify-between items-start">
+    <header className="w-full h-56 flex flex-col justify-between items-start">
       <div className="w-full h-12 shadow">
-        <div className="w-5/6 mx-auto h-12 flex flex-row justify-between items-center text-sm">
+        <div className="w-5/6 mx-auto h-12 flex flex-row justify-start items-center text-sm">
           {/* Weather and date here */}
           <div className="flex flex-row justify-around items-center w-1/3">
           <span>
@@ -20,17 +20,17 @@ function Header(): JSX.Element {
           </div>
 
           {/* Breaking News */}
-          <div className="flex border-black border-r flex-row justify-start items-stretch h-full w-1/2">
-            <p className="inline-block shadow-sm px-2 py-4 align-middle leading-5 h-full bg-red-500 w-1/6">Breaking</p>
-            <p className="inline-block shadow-sm px-2 py-4 align-middle leading-5 h-full w-5/6">lorem See mE here</p>
+          <div className="flex flex-row justify-start items-stretch h-full w-3/6">
+            <p className="pl-2 shadow-sm flex flex-row justify-start items-center h-full bg-red-500 w-1/6">Breaking</p>
+            <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">lorem See mE here</p>
           </div>
 
           {/* social media */}
-          <div className="flex flex-row justify-center items-center w-1/5 text-right">
-            <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
+          <div className="flex flex-row justify-center items-center h-full w-1/6 text-right">
+            <FontAwesomeIcon className="py-1 text-2xl" icon={faFacebook}></FontAwesomeIcon>
+            <FontAwesomeIcon className="py-1 text-2xl" icon={faTwitter}></FontAwesomeIcon>
+            <FontAwesomeIcon className="py-1 text-2xl" icon={faInstagram}></FontAwesomeIcon>
+            <FontAwesomeIcon className="py-1 text-2xl" icon={faYoutube}></FontAwesomeIcon>
           </div>
         </div>
       </div>
