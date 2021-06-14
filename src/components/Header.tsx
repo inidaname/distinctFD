@@ -2,8 +2,22 @@ import Top from './header/Top';
 
 function Header(): JSX.Element {
   return (
-    <header className="w-full h-56 flex flex-col justify-between items-start">
+    <header className="w-full h-56 flex flex-col justify-start items-start">
       <Top></Top>
+      {/* ads section */}
+      {/* TODO: use ads as both horizontal and vertical display */}
+      <section className="w-5/6 mx-auto h-28 mt-10 flex flex-row justify-between items-center">
+        {/* Logo section */}
+        <div className="w-1/5 ml-7 border border-black">
+          <h1 className="hidden">Distinct News</h1>
+          <img src="" className="w-full" alt="Logo" />
+        </div>
+
+        {/* Page ads */}
+        <div className="bg-gradient-to-l from-blue-500 via-blue-300 to-blue-200 self-stretch w-2/3">
+
+        </div>
+      </section>
     </header>
   );
 }
