@@ -1,9 +1,9 @@
 function Footer(): JSX.Element {
-    return (
-        <footer>
-            Footer here
-        </footer>
-    )
+  return (
+    <footer>
+      Footer Here
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
