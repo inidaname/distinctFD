@@ -12,33 +12,44 @@ function Lead({page}: {page: string}): JSX.Element {
     return {url: '', author: ''}
   }
 
-  let dB: {url: string, author: string} = {url: '', author: ''};
+
   return (
     <section className="h-96 mx-auto gap-2 grid-rows-2 grid-cols-5 grid w-5/6">
       <div className="relative row-span-3 col-span-3">
-
-        <div className="absolute z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
-          <h3>News Headline</h3>
+        <div className="absolute text-white flex flex-col justify-end p-6 z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
+          <h3 className="font-bold">{getRandom().author}</h3>
+          <p className="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eligendi quidem voluptatem et, aspernatur optio nesciunt obcaecati mollitia autem
+          </p>
         </div>
-        <img src={dB = getRandom() && dB.url} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
+        <img src={getRandom().url} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
       </div>
       <div className="relative">
-        <div className="absolute z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
-          <h3>News Headline</h3>
+        <div className="absolute text-white flex flex-col justify-end p-6 z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
+          <h3 className="font-bold">{getRandom().author}</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur
+            </p>
         </div>
-        <img src={(data) ? data[Math.floor(Math.random() * data.length)].download_url : null} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
+        <img src={getRandom().url} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
       </div>
       <div className="relative">
-        <div className="absolute z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
-          <h3>News Headline</h3>
+        <div className="absolute text-white flex flex-col justify-end p-6 z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
+          <h3 className="font-bold">{getRandom().author}</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur
+            </p>
         </div>
-        <img src={(data) ? data[Math.floor(Math.random() * data.length)].download_url : null} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
+        <img src={getRandom().url} className="z-10 absolute top-0 left-0 w-full h-full" alt="" />
       </div>
-      <div className="relative row-span-1 col-span-2">
-        <div className="absolute z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
-          <h3>News Headline</h3>
+      <div className="relative row-span-2 col-span-2">
+        <div className="absolute text-white flex flex-col justify-end p-6 z-20 h-full w-full bg-opacity-40 bg-black top-0 left-0">
+          <h3 className="font-bold">{getRandom().author}</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur
+            </p>
         </div>
-        <img src={`${(data) ? data[1 + Math.floor(Math.random() * data.length)].download_url : null}/?grayscale&blur=2`} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
+        <img src={`${getRandom().url}/?grayscale&blur=2`} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
       </div>
     </section>
   )
