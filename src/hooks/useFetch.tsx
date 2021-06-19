@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url: string) => {
+const useFetch = () => {
+  const url = `https://picsum.photos/v2/list?page=1&limit=20`;
   const [data, setData]: [
     any[] | undefined,
     React.Dispatch<React.SetStateAction<any[] | undefined>>
