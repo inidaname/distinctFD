@@ -61,6 +61,7 @@
     "@types/react-router-dom": "^5.1.7",
     "autoprefixer": "^9",
     "cypress": "^7.5.0",
+    "html-webpack-plugin": "4",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }

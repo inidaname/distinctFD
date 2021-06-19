@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
-  const url = `https://picsum.photos/v2/list?page=1&limit=20`;
+const useFetch = (url?: string) => {
+  const getUrl = (!url) ? `https://picsum.photos/v2/list?page=1&limit=20` : url;
   console.log('fetch call')
   const [data, setData]: [
     any[] | undefined,
@@ -12,16 +12,16 @@ const useFetch = () => {
 
   useEffect(() => {
     const abort = new AbortController();
-    fetch(url, { signal: abort.signal })
+    fetch(getUrl, { signal: abort.signal })
       .then((res) => {
-        if (!res.ok) {
+        if (!res.status) {
           throw Error("Could not load data for that response");
         }
         return res.json();
       })
       .then((data) => {
         setIsPending(false);
-        setData(data);
+        setData(data.articles);
       })
       .catch((err) => {
         if (err.name === "AbortError") {
@@ -33,7 +33,7 @@ const useFetch = () => {
       });
 
     return () => abort.abort();
-  }, [url]);
+  }, [getUrl]);
 
   return { isPending, error, data };
 };
