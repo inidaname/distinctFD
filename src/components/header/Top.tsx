@@ -26,8 +26,9 @@ function Top(): JSX.Element {
         <p className="pl-2 shadow-sm flex flex-row justify-start items-center h-full bg-red-500 text-white w-1/5">Headlines</p>
         {isPending && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">Headlines loading</p>}
         <div className="w-5/6 h-full flex flex-col items-center">
-          {news && news.map(function(article, index ) {
-            return <p key={index} className="pl-2 inline-block w-full leading-3 items-center py-2">{article.title}</p>
+          {news && news.map(function(article, index) {
+            <p key={index} className="pl-2 inline-block w-full leading-3 items-center py-2">{article.title}</p>
+            return index
           })}
         </div>
       </div>

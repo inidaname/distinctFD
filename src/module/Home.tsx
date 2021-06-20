@@ -39,7 +39,6 @@ function Home(): JSX.Element {
           <SideBar></SideBar>
         </div>
       </section>
-      Home Show
     </main>
   );
 }
