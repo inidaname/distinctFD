@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactNode } from "react";
+import { ReactHTMLElement, useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 
 
@@ -7,15 +7,28 @@ function Top(): JSX.Element {
 
   // @TODO: Use redux MAYBE to animate headlines
 
-
   const {isPending, error, data: news} = useFetch(`https://newsapi.org/v2/top-headlines?country=ng&pageSize=5&apiKey=9599b201ce454089997cb56cb39c4952`);
+  const [para, setPara]: [JSX.Element | undefined, React.Dispatch<React.SetStateAction<JSX.Element | undefined>>] = useState();
 
-  function loopArticle(arr: any[]): ReactNode {
-    for (let index = 0; index < arr.length; index++) {
-      const element = <p key={index} className="pl-2 inline-block w-full leading-3 items-center py-2">{arr[index].title}</p>;
-      return element
+  useEffect(() => {
+    let articles: any[] = []
+    if (news) {
+      articles = news.map((article, index) => {
+        return <p key={index} className="pl-2 inline-block w-full leading-3 items-center py-2">{article.title}</p>;
+      })
     }
-  }
+    setInterval(() => {
+      if (articles) {
+        articles.forEach((article, i) => {
+          setPara(article)
+        })
+      }
+    }, 5000)
+    // clearInterval()
+
+  }, [news])
+
+
 
   // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=d642024a2c52495b2d7132601bdf7271`)
 
@@ -40,7 +53,7 @@ function Top(): JSX.Element {
         <p className="pl-2 shadow-sm flex flex-row justify-start items-center h-full bg-red-500 text-white w-1/5">Headlines</p>
         {isPending && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">Headlines loading</p>}
         <div className="w-5/6 h-full flex flex-col items-center">
-          {news && loopArticle(news)}
+          {news && para}
         </div>
       </div>
 
