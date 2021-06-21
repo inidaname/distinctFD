@@ -36,8 +36,8 @@ function Top(): JSX.Element {
       {/* Breaking News */}
       <div className="flex flex-row justify-start items-stretch h-full w-3/6">
         <p className="pl-2 shadow-sm flex flex-row justify-start items-center h-full bg-red-500 text-white w-1/5">Headlines</p>
-        {isPending && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">Headlines loading</p>}
-
+          {isPending && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">Headlines loading</p>}
+          {error && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">{error}</p>}
           {news && news.map((article, index)=> {
             return <p key={index} className={(para === index) ? `pl-2 inline-block w-5/6 h-full leading-3 items-center py-2` : `hidden`}>{article.title}</p>
           })}
