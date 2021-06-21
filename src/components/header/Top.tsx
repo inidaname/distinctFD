@@ -8,28 +8,13 @@ function Top(): JSX.Element {
   // @TODO: Use redux MAYBE to animate headlines
 
   const {isPending, error, data: news} = useFetch(`https://newsapi.org/v2/top-headlines?country=ng&pageSize=5&apiKey=9599b201ce454089997cb56cb39c4952`);
-  const [para, setPara]: [JSX.Element | undefined, React.Dispatch<React.SetStateAction<JSX.Element | undefined>>] = useState();
-
+  const [para, setPara]: [number, React.Dispatch<React.SetStateAction<number>>] = useState(0);
+  let num = 5
   useEffect(() => {
-    let articles: any[] = []
-    if (news) {
-      articles = news.map((article, index) => {
-        return <p key={index} className="pl-2 inline-block w-full leading-3 items-center py-2">{article.title}</p>;
-      })
-    }
-    setInterval(() => {
-      if (articles) {
-        articles.forEach((article, i) => {
-          setPara(article)
-        })
-      }
-    }, 5000)
-    // clearInterval()
-
-  }, [news])
-
-
-
+      const interval = setInterval(function (){
+          setPara(newP =>  (newP <= (num - 1)) ? newP + 1 : 0)
+      }, 5000)
+  }, [num])
   // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=d642024a2c52495b2d7132601bdf7271`)
 
 
@@ -52,9 +37,11 @@ function Top(): JSX.Element {
       <div className="flex flex-row justify-start items-stretch h-full w-3/6">
         <p className="pl-2 shadow-sm flex flex-row justify-start items-center h-full bg-red-500 text-white w-1/5">Headlines</p>
         {isPending && <p className="pl-2 flex flex-row justify-start items-center h-full w-5/6">Headlines loading</p>}
-        <div className="w-5/6 h-full flex flex-col items-center">
-          {news && para}
-        </div>
+
+          {news && news.map((article, index)=> {
+            return <p key={index} className={(para === index) ? `pl-2 inline-block w-5/6 h-full leading-3 items-center py-2` : `hidden`}>{article.title}</p>
+          })}
+
       </div>
 
       {/* social media */}
