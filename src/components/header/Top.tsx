@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactHTMLElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 
 
@@ -7,11 +7,11 @@ function Top(): JSX.Element {
 
   // @TODO: Use redux MAYBE to animate headlines
 
-  const {isPending, error, data: news} = useFetch(`https://newsapi.org/v2/top-headlines?country=ng&pageSize=5&apiKey=9599b201ce454089997cb56cb39c4952`);
+  const {isPending, error, data: news} = useFetch(`https://newsapi.org/v2/top-headlines?country=ng&category=business&pageSize=5&apiKey=9599b201ce454089997cb56cb39c4952`);
   const [para, setPara]: [number, React.Dispatch<React.SetStateAction<number>>] = useState(0);
   let num = 5
   useEffect(() => {
-      const interval = setInterval(function (){
+      setInterval(function (){
           setPara(newP =>  (newP <= (num - 1)) ? newP + 1 : 0)
       }, 5000)
   }, [num])
