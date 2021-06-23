@@ -15,8 +15,6 @@ function Top(): JSX.Element {
           setPara(newP =>  (newP <= (num - 1)) ? newP + 1 : 0)
       }, 5000)
   }, [num])
-  // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=d642024a2c52495b2d7132601bdf7271`)
-
 
   return (
   <div className="w-full h-12 shadow mb-5">
