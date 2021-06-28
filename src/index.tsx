@@ -4,11 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore, Store } from 'redux';
+
+import { Provider } from 'react-redux';
+
+import storage from './reducers/store'
+
 import './libraries/fontawesome';
+
+const store: Store<any> = createStore(storage)
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store} >
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
