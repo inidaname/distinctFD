@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 
 
-function Top(): JSX.Element {
+function Top(): ReactElement {
 
   // @TODO: Use redux MAYBE to animate headlines
 

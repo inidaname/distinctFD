@@ -1,5 +1,6 @@
+import { ReactElement } from "react";
 
-function Lead({page, data: topFive, isPending, error}: {page: string, data: any[], isPending: boolean, error: null }): JSX.Element {
+function Lead({page, data: topFive, isPending, error}: {page: string, data: any[], isPending: boolean, error: null }): ReactElement {
 
  
 
