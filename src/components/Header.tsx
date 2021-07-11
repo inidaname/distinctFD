@@ -1,7 +1,8 @@
+import { FunctionComponent, ReactElement } from 'react';
 import Nav from './header/Nav';
 import Top from './header/Top';
 
-function Header(): JSX.Element {
+const Header: FunctionComponent = (): ReactElement => {
   return (
     <header className="w-full h-auto flex flex-col justify-start items-start">
       <Top></Top>
