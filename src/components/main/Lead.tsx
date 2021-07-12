@@ -24,7 +24,7 @@ function Lead({page, data: topFive, isPending, error}: {page: string, data: any[
               <h3 className="font-bold">{(tops.author) ? tops.author : tops.source.name}</h3>
               <p className="text-sm">{tops.description} <br />{timeLaps.format(- new Date(tops.publishedAt).getHours(), 'hours')}</p>
             </div>
-            <img src={tops.urlToImage} className=" z-10 absolute top-0 left-0 w-full h-full" alt="" />
+            <img src={tops.urlToImage} className="z-10 absolute top-0 left-0 w-full h-full" alt="" />
           </div>
         })}
       </section>
