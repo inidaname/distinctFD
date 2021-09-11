@@ -1,0 +1,7 @@
+export { default as Home } from './Home'
+export { default as Entertainments } from './Entertainments'
+export { default as Business } from './Business'
+export { default as News } from './News'
+export { default as NotFound } from './NotFound'
+export { default as Politics } from './Politics'
+export { default as Sports } from './Sports'
