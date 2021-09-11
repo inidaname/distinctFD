@@ -1,6 +1,6 @@
 import { ReactElement, FunctionComponent } from "react";
-import Lead from "../components/main/Lead";
-import SideBar from "../components/main/SideBar";
+import Lead from "components/main/Lead";
+import SideBar from "components/main/SideBar";
 import useFetch from "../hooks/useFetch";
 
 const Home: FunctionComponent = (): ReactElement =>{

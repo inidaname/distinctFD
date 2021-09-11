@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FunctionComponent, ReactElement } from "react";
 
-function Footer(): JSX.Element {
+const Footer: FunctionComponent = (): ReactElement => {
   return (
     <footer className="w-full h-60 flex flex-col py-5 justify-around bg-gradient-to-t from-gray-700 via-gray-700 to-gray-700">
       <div className="flex flex-row justify-center items-center h-full mx-auto w-5/6">

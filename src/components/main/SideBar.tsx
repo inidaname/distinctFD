@@ -1,6 +1,6 @@
-import { ReactElement } from "react"
+import { FunctionComponent, ReactElement } from "react"
 
-function SideBar(): ReactElement {
+const SideBar: FunctionComponent = (): ReactElement => {
   return (
     <aside className="border border-black w-2/6 h-md">
       The aside

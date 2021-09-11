@@ -1,14 +1,16 @@
 import { Route, Switch } from "react-router-dom";
-import Business from "../module/Business";
-import Entertainments from "../module/Entertainments";
-import Home from "../module/Home";
-import News from "../module/News";
-import NotFound from "../module/NotFound";
-import Politics from "../module/Politics";
-import Sports from "../module/Sports";
+import { FunctionComponent, ReactElement } from "react";
+import {
+  Home,
+  Business,
+  Politics,
+  Sports,
+  NotFound,
+  News,
+  Entertainments,
+} from "module/index";
 
-
-function Main(): JSX.Element {
+const Main: FunctionComponent = (): ReactElement => {
   return (
     <Switch>
       <Route exact path="/">

@@ -1,6 +1,5 @@
-import { FunctionComponent, ReactElement } from 'react';
-import Nav from './header/Nav';
-import Top from './header/Top';
+import { FunctionComponent, ReactElement } from "react";
+import { Top, Nav } from "components/header";
 
 const Header: FunctionComponent = (): ReactElement => {
   return (
@@ -16,15 +15,13 @@ const Header: FunctionComponent = (): ReactElement => {
         </div>
 
         {/* Page ads */}
-        <div className="bg-gradient-to-l from-blue-500 via-blue-300 to-blue-200 self-stretch w-2/3">
-
-        </div>
+        <div className="bg-gradient-to-l from-blue-500 via-blue-300 to-blue-200 self-stretch w-2/3"></div>
       </section>
 
       {/* Navigation */}
       <Nav></Nav>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,7 +1,7 @@
-import { ReactElement } from "react"
+import { FunctionComponent, ReactElement } from "react"
 import { NavLink } from "react-router-dom"
 
-function Nav(): ReactElement {
+const Nav: FunctionComponent = (): ReactElement => {
   return (
     <nav className="h-12 text-white bg-gradient-to-r from-gray-700 via-gray-700 to-gray-700 mt-5 w-5/6 mx-auto flex flex-row justify-between items-center">
       <div className="w-4/5">
